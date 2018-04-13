@@ -20,14 +20,15 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
-    "react": "^0.13.3",
-    "react-scripts": "1.1.4",
     "babel-core": "^5.2.17",
     "babel-loader": "^5.0.0",
-    "style-loader": "^0.12.3",
+    "create-react-component-folder": "^0.1.14",
     "css-loader": "^0.15.1",
+    "html-webpack-plugin": "^2.30.1",
+    "react": "^0.13.3",
+    "react-scripts": "1.1.4",
+    "style-loader": "^0.12.3",
     "webpack": "^1.9.10",
-    "webpack-dev-server": "^1.9.0",
-    "html-webpack-plugin": "^2.30.1"
+    "webpack-dev-server": "^1.9.0"
   }
 }
