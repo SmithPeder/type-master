@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/common/Header';
-import Main from './components/common/Main';
+import Header from './components/Header';
 
 const App = () => {
   return (
     <div>
-      <Header title='Type Master'/>
-      <Main />
+      <Header title="Type Master" />
     </div>
   );
 };
