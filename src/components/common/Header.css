@@ -1,0 +1,10 @@
+.root {
+  background-color: rgb(150, 150, 150);
+  text-align: left;
+  border-radius: 5px;
+}
+
+.text {
+  color: rgb(90, 90, 90);
+  padding: 10px;
+}
