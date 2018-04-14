@@ -12,6 +12,7 @@ class Typefelt extends Component {
 
   update() {
     let input = document.getElementById('userInput').value.split('');
+    console.log(input);
     this.setState({ lettersTyped: input });
   }
 
@@ -20,10 +21,7 @@ class Typefelt extends Component {
       <div>
         <Word
           wordToMatch={this.props.wordToMatch.toUpperCase()}
-          lettersTyped={this.state.lettersTyped
-            .join()
-            .replace(/,/g, '')
-            .toUpperCase()}
+          lettersTyped={this.state.lettersTyped.join('').toUpperCase()}
         />
         <input
           id="userInput"
