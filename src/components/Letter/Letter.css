@@ -1,0 +1,15 @@
+.root {
+  width: 55px;
+  height: 53.333px;
+  text-align: center;
+  border: 3px dashed rgb(25, 181, 254);
+  border-radius: 7px;
+  margin: 20px;
+}
+
+.text {
+  color: rgb(25, 181, 254);
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
