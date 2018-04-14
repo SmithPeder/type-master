@@ -6,19 +6,30 @@ class Typefelt extends Component {
   constructor() {
     super();
     this.state = {
-      letters: []
+      lettersTyped: []
     };
   }
 
   update() {
-    console.log('HE');
-    //this.setState({ letters: getElementById('in').value.split('') });
+    let input = document.getElementById('userInput').value.split('');
+    this.setState({ lettersTyped: input });
   }
 
   render() {
     return (
       <div>
-        <input id="in" className={styles.root} onChange={this.update} />
+        <Word
+          wordToMatch={this.props.wordToMatch.toUpperCase()}
+          lettersTyped={this.state.lettersTyped
+            .join()
+            .replace(/,/g, '')
+            .toUpperCase()}
+        />
+        <input
+          id="userInput"
+          className={styles.root}
+          onChange={this.update.bind(this)}
+        />
       </div>
     );
   }

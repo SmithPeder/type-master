@@ -6,17 +6,43 @@ class Word extends Component {
   constructor() {
     super();
     this.state = {
-      letters: []
+      lettersTyped: [],
+      wordToMatch: []
     };
   }
+
   componentWillMount() {
-    this.setState({ letters: this.props.word.split('') });
+    this.setState({
+      lettersTyped: this.props.lettersTyped.split(''),
+      wordToMatch: this.props.wordToMatch.split('')
+    });
+  }
+
+  componentWillReceiveProps() {
+    this.setState({ lettersTyped: this.props.lettersTyped.split('') });
   }
 
   render() {
-    const gruopedLetters = this.state.letters.map(l => <Letter letter={l} />);
+    console.log('lettersTyped: ' + this.state.lettersTyped);
+    console.log('wordToMatch: ' + this.state.wordToMatch);
 
-    return <div className={styles.root}>{gruopedLetters}</div>;
+    const gruopedLetters = this.state.lettersTyped.map((letter, index) => (
+      <Letter
+        value={this.state.lettersTyped[index] == this.state.wordToMatch[index]}
+        letter={letter}
+      />
+    ));
+
+    const greyword = this.state.wordToMatch.map(l => (
+      <Letter value={null} letter={l} />
+    ));
+
+    return (
+      <div>
+        <div className={styles.root}>{greyword}</div>
+        <div className={styles.root}>{gruopedLetters}</div>
+      </div>
+    );
   }
 }
 

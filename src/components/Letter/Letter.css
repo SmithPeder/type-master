@@ -1,15 +1,28 @@
 .root {
-  width: 55px;
-  height: 53.333px;
+  width: 30px;
+  height: 30px;
   text-align: center;
-  border: 3px dashed rgb(25, 181, 254);
   border-radius: 7px;
-  margin: 20px;
+  margin: 0px;
+}
+
+.green {
+  composes: root;
+  color: rgb(46, 204, 113);
+}
+
+.red {
+  composes: root;
+  color: rgb(231, 76, 60);
+}
+
+.grey {
+  composes: root;
+  color: rgb(189, 195, 199);
 }
 
 .text {
-  color: rgb(25, 181, 254);
-  font-size: 40px;
+  font-size: 20px;
   font-family: 'Roboto', sans-serif;
   margin: 0;
 }

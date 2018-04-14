@@ -8,8 +8,7 @@ const App = () => {
   return (
     <div>
       <Header title="Type Master" />
-      <Word word="HELLO" />
-      <Typefelt />
+      <Typefelt wordToMatch="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" />
     </div>
   );
 };
