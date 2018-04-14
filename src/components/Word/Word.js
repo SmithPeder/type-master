@@ -18,29 +18,27 @@ class Word extends Component {
     });
   }
 
-  componentWillReceiveProps() {
-    this.setState({ lettersTyped: this.props.lettersTyped.split('') });
+  componentWillReceiveProps(nextProps) {
+    this.setState({ lettersTyped: nextProps.lettersTyped.split('') });
   }
 
   render() {
-    console.log('lettersTyped: ' + this.state.lettersTyped);
-    console.log('wordToMatch: ' + this.state.wordToMatch);
-
-    const gruopedLetters = this.state.lettersTyped.map((letter, index) => (
+    const gruopedLetters = this.state.wordToMatch.map((letter, index) => (
       <Letter
-        value={this.state.lettersTyped[index] == this.state.wordToMatch[index]}
+        value={
+          this.state.lettersTyped.length <= index
+            ? null
+            : this.state.lettersTyped[index] == this.state.wordToMatch[index]
+        }
         letter={letter}
       />
     ));
 
-    const greyword = this.state.wordToMatch.map(l => (
-      <Letter value={null} letter={l} />
-    ));
-
     return (
       <div>
-        <div className={styles.root}>{greyword}</div>
         <div className={styles.root}>{gruopedLetters}</div>
+        <p>{this.props.lettersTyped}</p>
+        <p>{this.state.lettersTyped}</p>
       </div>
     );
   }
