@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Word from './components/Word';
 import Typefelt from './components/Typefelt';
 import sortBy from 'lodash/sortBy';
+import Container from './components/Container';
+import Button from './components/Button';
 let data = require('./sentences.json');
 
 class App extends Component {
@@ -15,15 +17,18 @@ class App extends Component {
   }
 
   nextSentence() {
-    this.setState({ dataIndex: this.state.dataIndex++ });
+    this.setState({ dataIndex: this.state.dataIndex + 1 });
   }
 
   render() {
+    console.log(this.state.dataIndex);
     return (
       <div>
         <Header title="Type Master" />
-        <Typefelt wordToMatch="APEKATT" />
-        <button onClick={this.nextSentence.bind(this)}>Next</button>
+        <Container>
+          <Typefelt wordToMatch="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
+          <Button onClick={this.nextSentence.bind(this)} text={'Neste'} />
+        </Container>
       </div>
     );
   }

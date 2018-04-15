@@ -1,8 +1,8 @@
 .root {
   background-color: rgb(75, 119, 190);
   width: 100%;
+  min-width: 500px;
   heigth: 50px;
-  margin-bottom: 20px;
 }
 
 .title {
