@@ -23,7 +23,7 @@ class Word extends Component {
   }
 
   render() {
-    const gruopedLetters = this.state.wordToMatch.map((letter, index) => (
+    const groupedLetters = this.state.wordToMatch.map((letter, index) => (
       <Letter
         value={
           this.state.lettersTyped.length <= index
@@ -34,11 +34,19 @@ class Word extends Component {
       />
     ));
 
+    let correctLetters = 0;
+    for (let i = 0; i < groupedLetters.length; i++) {
+      if (groupedLetters[i].props.value == true) {
+        correctLetters = correctLetters + 1;
+      }
+    }
+
     return (
       <div>
-        <div className={styles.root}>{gruopedLetters}</div>
-        <p>{this.props.lettersTyped}</p>
-        <p>{this.state.lettersTyped}</p>
+        <div className={styles.root}>{groupedLetters}</div>
+        <div className={styles.result}>
+          {correctLetters} av {groupedLetters.length}
+        </div>
       </div>
     );
   }

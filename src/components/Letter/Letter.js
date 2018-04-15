@@ -7,17 +7,17 @@ class Letter extends Component {
       <div>
         {this.props.value == true && (
           <div className={styles.green}>
-            <h1 className={styles.text}>{this.props.letter}</h1>
+            <p className={styles.text}>{this.props.letter}</p>
           </div>
         )}
         {this.props.value == false && (
           <div className={styles.red}>
-            <h1 className={styles.text}>{this.props.letter}</h1>
+            <p className={styles.text}>{this.props.letter}</p>
           </div>
         )}
         {this.props.value == null && (
           <div className={styles.grey}>
-            <h1 className={styles.text}>{this.props.letter}</h1>
+            <p className={styles.text}>{this.props.letter}</p>
           </div>
         )}
       </div>

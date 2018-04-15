@@ -1,6 +1,7 @@
 .root {
-  width: 30px;
-  height: 30px;
+  width: auto;
+  min-width: 5px;
+  height: 20px;
   text-align: center;
   border-radius: 7px;
   margin: 0px;
@@ -18,11 +19,12 @@
 
 .grey {
   composes: root;
-  color: rgb(189, 195, 199);
+  color: rgb(120, 120, 120);
 }
 
 .text {
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  font-weight: bold;
 }

@@ -20,8 +20,8 @@ class Typefelt extends Component {
     return (
       <div>
         <Word
-          wordToMatch={this.props.wordToMatch.toUpperCase()}
-          lettersTyped={this.state.lettersTyped.join('').toUpperCase()}
+          wordToMatch={this.props.wordToMatch}
+          lettersTyped={this.state.lettersTyped.join('')}
         />
         <input
           id="userInput"

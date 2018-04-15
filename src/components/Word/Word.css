@@ -3,3 +3,14 @@
   flex-wrap: wrap;
   margin: 20px;
 }
+
+.result {
+  margin: 0 20px;
+  padding: 5px;
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(240, 240, 240);
+  color: rgb(75, 119, 190);
+  border-radius: 10px;
+  text-align: center;
+}
