@@ -3,7 +3,9 @@ import styles from './Container.css';
 
 class Container extends Component {
   render() {
-    return <div className={styles.root}>{this.props.children}</div>;
+    const { children } = this.props;
+
+    return <div className={styles.root}>{children}</div>;
   }
 }
 

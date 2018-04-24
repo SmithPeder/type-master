@@ -2,32 +2,36 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header';
 import Word from './components/Word';
+import Sentence from './components/Sentence';
 import Typefelt from './components/Typefelt';
 import sortBy from 'lodash/sortBy';
 import Container from './components/Container';
 import Button from './components/Button';
-let data = require('./sentences.json');
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      dataIndex: 0
+      typed: '',
+      sentence: 'The sole advantage of power is that you can do more good'
     };
   }
 
-  nextSentence() {
-    this.setState({ dataIndex: this.state.dataIndex + 1 });
+  onNewLetter(letters) {
+    this.setState({ typed: letters.join('') });
+
+    console.log('TYPED: ' + letters.join(''));
+    console.log('SENTENCE: ' + this.state.sentence);
   }
 
+
   render() {
-    console.log(this.state.dataIndex);
     return (
       <div>
         <Header title="Type Master" />
         <Container>
-          <Typefelt wordToMatch="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" />
-          <Button onClick={this.nextSentence.bind(this)} text={'Neste'} />
+          <Sentence sentence={this.state.sentence} typed={this.state.typed} />
+          <Typefelt onNewLetter={this.onNewLetter.bind(this)} />
         </Container>
       </div>
     );

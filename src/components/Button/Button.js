@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import styles from './Button.css';
 class Button extends Component {
   render() {
+    const { onClick, text } = this.props;
+
     return (
-      <button className={styles.root} onClick={this.props.onClick}>
-        {this.props.text}
+      <button className={styles.root} onClick={onClick}>
+        {text}
       </button>
     );
   }

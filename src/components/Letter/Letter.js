@@ -3,21 +3,23 @@ import styles from './Letter.css';
 
 class Letter extends Component {
   render() {
+    const { value, letter } = this.props;
+
     return (
       <div>
-        {this.props.value == true && (
+        {value == true && (
           <div className={styles.green}>
-            <p className={styles.text}>{this.props.letter}</p>
+            <p className={styles.text}>{letter}</p>
           </div>
         )}
-        {this.props.value == false && (
+        {value == false && (
           <div className={styles.red}>
-            <p className={styles.text}>{this.props.letter}</p>
+            <p className={styles.text}>{letter}</p>
           </div>
         )}
-        {this.props.value == null && (
+        {value == null && (
           <div className={styles.grey}>
-            <p className={styles.text}>{this.props.letter}</p>
+            <p className={styles.text}>{letter}</p>
           </div>
         )}
       </div>
