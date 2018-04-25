@@ -7,7 +7,7 @@ class Word extends Component {
     super();
     this.state = {
       typed: [''],
-      wordToMatch: ['']
+      wordToMatch: [''],
     };
   }
 

@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Word from './components/Word';
 import Sentence from './components/Sentence';
 import Typefelt from './components/Typefelt';
-import sortBy from 'lodash/sortBy';
 import Container from './components/Container';
 import Button from './components/Button';
 
@@ -13,17 +12,17 @@ class App extends Component {
     super();
     this.state = {
       typed: '',
-      sentence: 'The sole advantage of power is that you can do more good'
+      sentence: 'The sole advantage of power is that you can do more good',
     };
   }
 
   onNewLetter(letters) {
     this.setState({ typed: letters.join('') });
-
-    console.log('TYPED: ' + letters.join(''));
-    console.log('SENTENCE: ' + this.state.sentence);
   }
 
+  next() {
+    this.setState({sentence: 'Neste setning er', typed: ''});
+  }
 
   render() {
     return (
@@ -32,6 +31,7 @@ class App extends Component {
         <Container>
           <Sentence sentence={this.state.sentence} typed={this.state.typed} />
           <Typefelt onNewLetter={this.onNewLetter.bind(this)} />
+          <Button text="Neste" onClick={this.next.bind(this)} />
         </Container>
       </div>
     );

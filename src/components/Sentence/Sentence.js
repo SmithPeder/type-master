@@ -8,7 +8,11 @@ class Sentence extends Component {
 
     const words = this.props.sentence 
       .split(' ')
-      .map( (word, index) => <Word wordToMatch={word} typed={typed[index] ? typed[index] : '' } /> )
+      .map( (word, index) => 
+        <Word 
+          wordToMatch={word}
+          typed={typed[index] ? typed[index] : '' } 
+        /> )
 
     return <div className={styles.root}>{words}</div>;
   }
