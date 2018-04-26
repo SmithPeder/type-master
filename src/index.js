@@ -12,7 +12,7 @@ class App extends Component {
     super();
     this.state = {
       typed: '',
-      sentence: 'The sole advantage of power is that you can do more good',
+      sentence: 'The sole advantage of power is that you can do more good'
     };
   }
 
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   next() {
-    this.setState({sentence: 'Neste setning er', typed: ''});
+    this.setState({ sentence: 'Another sentence', typed: '' });
   }
 
   render() {

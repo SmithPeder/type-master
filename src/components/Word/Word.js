@@ -7,12 +7,12 @@ class Word extends Component {
     super();
     this.state = {
       typed: [''],
-      wordToMatch: [''],
+      wordToMatch: ['']
     };
   }
 
   componentWillMount() {
-    const { wordToMatch, typed} = this.props;
+    const { wordToMatch, typed } = this.props;
 
     this.setState({
       wordToMatch: wordToMatch.split(''),
@@ -21,7 +21,7 @@ class Word extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ typed: nextProps.typed.split('') });
+    this.setState({ typed: nextProps.typed.split(''), wordToMatch: nextProps.wordToMatch.split('')});
   }
 
   render() {
@@ -30,9 +30,7 @@ class Word extends Component {
     const groupedLetters = wordToMatch.map((letter, index) => (
       <Letter
         value={
-          typed.length <= index
-            ? null
-            : typed[index] == wordToMatch[index]
+          typed.length <= index ? null : typed[index] == wordToMatch[index]
         }
         letter={letter}
       />
