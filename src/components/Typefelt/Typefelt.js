@@ -14,6 +14,7 @@ class Typefelt extends Component {
           id="userInput"
           className={styles.root}
           onChange={this.update.bind(this)}
+          value={this.props.typed}
         />
       </div>
     );

@@ -11,10 +11,10 @@ import data from './sentences.js';
 class App extends Component {
   constructor() {
     super();
-    this.state = {
+    this.state={
       index: 0,
       typed: '',
-      sentence: data[index].sentence
+      sentence: data[1].sentence
     };
   }
 
@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   next() {
-    this.setState({ index: this.state.index+1});
+    this.setState({ index: this.state.index+1, typed: ''});
   }
 
   render() {
@@ -32,7 +32,7 @@ class App extends Component {
         <Header title="Type Master" />
         <Container>
           <Sentence sentence={this.state.sentence} typed={this.state.typed} />
-          <Typefelt onNewLetter={this.onNewLetter.bind(this)} />
+          <Typefelt onNewLetter={this.onNewLetter.bind(this)} typed={this.state.typed} />
           <Button text="Neste" onClick={this.next.bind(this)} />
         </Container>
       </div>
