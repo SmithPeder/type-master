@@ -29,6 +29,7 @@ class Word extends Component {
 
     const groupedLetters = wordToMatch.map((letter, index) => (
       <Letter
+        key={index}
         value={
           typed.length <= index ? null : typed[index] == wordToMatch[index]
         }

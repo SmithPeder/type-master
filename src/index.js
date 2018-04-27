@@ -6,13 +6,15 @@ import Sentence from './components/Sentence';
 import Typefelt from './components/Typefelt';
 import Container from './components/Container';
 import Button from './components/Button';
+import data from './sentences.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      index: 0,
       typed: '',
-      sentence: 'The sole advantage of power is that you can do more good'
+      sentence: data[index].sentence
     };
   }
 
@@ -21,7 +23,7 @@ class App extends Component {
   }
 
   next() {
-    this.setState({ sentence: 'Another sentence', typed: '' });
+    this.setState({ index: this.state.index+1});
   }
 
   render() {

@@ -1,3 +1,4 @@
+export default
 [
   { "sentence": "The sole advantage of power is that you can do more good" },
   {
