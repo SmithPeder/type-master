@@ -21,7 +21,9 @@ class Word extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ typed: nextProps.typed.split(''), wordToMatch: nextProps.wordToMatch.split('')});
+    this.setState({ 
+      typed: nextProps.typed.split(''), 
+      wordToMatch: nextProps.wordToMatch.split('')});
   }
 
   render() {

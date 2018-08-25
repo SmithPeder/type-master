@@ -16,6 +16,7 @@ class App extends Component {
       typed: '',
       sentence: data[1].sentence
     };
+    console.log(data);
   }
 
   onNewLetter(letters) {
